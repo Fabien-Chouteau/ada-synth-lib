@@ -1,9 +1,9 @@
-with Sound_Gen_Interfaces;        use Sound_Gen_Interfaces;
-with Utils;                       use Utils;
+with ASL.Sound_Gen_Interfaces;        use ASL.Sound_Gen_Interfaces;
+with ASL.Utils;                       use ASL.Utils;
 with Ada.Containers.Ordered_Sets;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 
-package Sequencer is
+package ASL.Sequencer is
 
    type Seq_Note is record
       Note     : Note_T;
@@ -57,4 +57,4 @@ package Sequencer is
    overriding function Name (Self : in out Sequencer) return String is
      (To_String (Self.Track_Name));
 
-end Sequencer;
+end ASL.Sequencer;

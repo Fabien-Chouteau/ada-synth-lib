@@ -1,8 +1,8 @@
-with Config; use Config;
-with Array_Utils;
+with ASL.Config; use ASL.Config;
+with ASL.Array_Utils;
 with Ada.Numerics.Elementary_Functions; use Ada.Numerics.Elementary_Functions;
 
-package Utils is
+package ASL.Utils is
    type Frequency is new Float;
    type Sample_Period is new Natural;
    subtype Sample is Float;
@@ -86,4 +86,4 @@ package Utils is
 
    function Img (F : Float) return String;
 
-end Utils;
+end ASL.Utils;

@@ -1,7 +1,7 @@
-with Effects; use Effects;
+with ASL.Effects; use ASL.Effects;
 with Interfaces; use Interfaces;
 
-package body Waves is
+package body ASL.Waves is
 
    function Mod_To_Int (A : Unsigned_32) return Integer_32;
 
@@ -214,6 +214,27 @@ package body Waves is
          Current_P => 0, others => <>);
    end Create_ADSR;
 
+   -------------
+   -- Note_On --
+   -------------
+
+   procedure Note_On (Self : in out ADSR) is
+   begin
+      Self.Current_P := 0;
+      Self.State := Running;
+   end Note_On;
+
+   --------------
+   -- Note_Off --
+   --------------
+
+   procedure Note_Off (Self : in out ADSR) is
+   begin
+      Self.State := Release;
+      Self.Cur_Sustain := Scale (Self.Memo_Sample);
+      Self.Current_P := 0;
+   end Note_Off;
+
    -----------------
    -- Next_Sample --
    -----------------
@@ -224,16 +245,15 @@ package body Waves is
       Ret : Sample;
    begin
       for I in Buffer'Range loop
-         case Self.Source.Buffer (I).Kind is
-         when On =>
-            Self.Current_P := 0;
-            Self.State := Running;
-         when Off =>
-            Self.State := Release;
-            Self.Cur_Sustain := Scale (Self.Memo_Sample);
-            Self.Current_P := 0;
-         when No_Signal => null;
-         end case;
+         if Self.Source /= null then
+            case Self.Source.Buffer (I).Kind is
+            when On =>
+               Self.Note_On;
+            when Off =>
+               Self.Note_Off;
+            when No_Signal => null;
+            end case;
+         end if;
 
          Self.Current_P := Self.Current_P + 1;
 
@@ -486,6 +506,15 @@ package body Waves is
            others      => <>);
    end Fixed;
 
+   -------------------
+   -- Set_Frequency --
+   -------------------
+
+   procedure Set_Frequency (Self : in out Fixed_Gen; Freq : Frequency) is
+   begin
+      Self.Val := Sample (Freq);
+   end Set_Frequency;
+
    ---------------
    -- Set_Value --
    ---------------
@@ -515,4 +544,4 @@ package body Waves is
       end case;
    end Set_Value;
 
-end Waves;
+end ASL.Waves;

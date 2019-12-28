@@ -1,7 +1,7 @@
-with Utils.Tan_Table; use Utils.Tan_Table;
+with ASL.Utils.Tan_Table; use ASL.Utils.Tan_Table;
 with Ada.Float_Text_IO;
 
-package body Utils is
+package body ASL.Utils is
 
    -------------------
    -- Sample_To_Int --
@@ -292,4 +292,4 @@ package body Utils is
       return S;
    end Img;
 
-end Utils;
+end ASL.Utils;

@@ -60,7 +60,7 @@ with Ada.Containers.Vectors;
 generic
    type Element_Type is private;
    with function "=" (L, R : Element_Type) return Boolean is <>;
-package Array_Utils is
+package ASL.Array_Utils is
 
    subtype Index_Type is Natural;
 
@@ -299,4 +299,4 @@ package Array_Utils is
 
 private
    type Bool_Array is array (Index_Type range <>) of Boolean;
-end Array_Utils;
+end ASL.Array_Utils;

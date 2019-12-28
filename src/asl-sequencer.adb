@@ -1,7 +1,7 @@
-with Config; use Config;
+with ASL.Config; use ASL.Config;
 with Ada.Text_IO; use Ada.Text_IO;
 
-package body Sequencer is
+package body ASL.Sequencer is
 
    ------------
    -- Create --
@@ -122,4 +122,4 @@ package body Sequencer is
       Self.Buffer := (others => (No_Note, Off));
    end Reset;
 
-end Sequencer;
+end ASL.Sequencer;

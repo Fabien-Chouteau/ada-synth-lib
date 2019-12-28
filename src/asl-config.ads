@@ -1,4 +1,4 @@
-package Config is
+package ASL.Config is
    SAMPLE_RATE : constant := 44_100.0;
    Debug : Boolean := False;
-end Config;
+end ASL.Config;

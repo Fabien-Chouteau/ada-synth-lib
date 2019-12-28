@@ -1,8 +1,11 @@
-with Utils; use Utils;
-with Waves; use Waves; with Effects; use Effects;
-with Sound_Gen_Interfaces; use Sound_Gen_Interfaces;
-with Command; use Command;
-with BLIT; use BLIT;
+with ASL.Utils; use ASL.Utils;
+with ASL.Waves; use ASL.Waves;
+with ASL.Effects; use ASL.Effects;
+with ASL.Sound_Gen_Interfaces; use ASL.Sound_Gen_Interfaces;
+with ASL.Command; use ASL.Command;
+with ASL.BLIT; use ASL.BLIT;
+use ASL;
+
 with Write_To_Stdout;
 
 procedure Audio_2 is

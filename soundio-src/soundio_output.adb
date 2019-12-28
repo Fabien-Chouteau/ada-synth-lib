@@ -1,8 +1,8 @@
 with Ada.Unchecked_Conversion;
 with System;
-with Utils;       use Utils;
+with ASL.Utils;   use ASL.Utils;
 with Ada.Text_IO; use Ada.Text_IO;
-with Config;      use Config;
+with ASL.Config;
 
 package body Soundio_Output is
 
@@ -121,7 +121,7 @@ package body Soundio_Output is
          Current_Drift_Level := Frame_Count_Max;
       end if;
 
-      if Config.Debug then
+      if ASL.Config.Debug then
          Put_Line
            ("In the write callback, " & Frame_Count_Min'Img
             & " " & Frame_Count_Max'Img);
@@ -163,7 +163,7 @@ package body Soundio_Output is
 
          Available_Frames := FRB.Available_Read_Frames (User_Data.Ring_Buf);
 
-         if Config.Debug then
+         if ASL.Config.Debug then
             Put_Line ("Available frames to read : " & Available_Frames'Img);
          end if;
 
@@ -192,7 +192,7 @@ package body Soundio_Output is
             end;
          end loop;
 
-         if Config.Debug then
+         if ASL.Config.Debug then
             Put_Line ("Frames left : " & Frames_Left'Img);
             Put_Line ("Left frames to read : "
                       & FRB.Available_Read_Frames (User_Data.Ring_Buf)'Img);

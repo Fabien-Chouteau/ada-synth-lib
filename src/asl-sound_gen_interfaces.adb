@@ -1,6 +1,6 @@
 with Ada.Containers.Vectors;
 
-package body Sound_Gen_Interfaces is
+package body ASL.Sound_Gen_Interfaces is
 
    package PA_Vectors
    is new Ada.Containers.Vectors (Natural, Params_Scope);
@@ -187,4 +187,4 @@ package body Sound_Gen_Interfaces is
       Self.Set_Value (I, V);
    end Set_Scaled_Value;
 
-end Sound_Gen_Interfaces;
+end ASL.Sound_Gen_Interfaces;

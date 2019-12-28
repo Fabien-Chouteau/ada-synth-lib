@@ -21,7 +21,7 @@
 --                                                                          --
 ------------------------------------------------------------------------------
 
-package body Array_Utils is
+package body ASL.Array_Utils is
 
    -------------
    -- Map_Gen --
@@ -410,4 +410,4 @@ package body Array_Utils is
       end return;
    end To_Array;
 
-end Array_Utils;
+end ASL.Array_Utils;

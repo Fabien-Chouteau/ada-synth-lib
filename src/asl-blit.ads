@@ -1,8 +1,8 @@
-with Sound_Gen_Interfaces; use Sound_Gen_Interfaces;
-with Utils; use Utils;
-with Waves; use Waves;
+with ASL.Sound_Gen_Interfaces; use ASL.Sound_Gen_Interfaces;
+with ASL.Utils; use ASL.Utils;
+with ASL.Waves; use ASL.Waves;
 
-package BLIT is
+package ASL.BLIT is
    Ring_Buffer_Size : constant := 16;
 
    type Ring_Buffer_T is array (0 .. Ring_Buffer_Size - 1) of Sample;
@@ -42,4 +42,4 @@ package BLIT is
    overriding procedure Next_Samples
      (Self : in out BLIT_Saw; Buffer : in out Generator_Buffer);
 
-end BLIT;
+end ASL.BLIT;

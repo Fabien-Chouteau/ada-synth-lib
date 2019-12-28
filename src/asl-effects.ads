@@ -1,8 +1,8 @@
-with Utils; use Utils;
-with Sound_Gen_Interfaces; use Sound_Gen_Interfaces;
-with Waves; use Waves;
+with ASL.Utils; use ASL.Utils;
+with ASL.Sound_Gen_Interfaces; use ASL.Sound_Gen_Interfaces;
+with ASL.Waves; use ASL.Waves;
 
-package Effects is
+package ASL.Effects is
 
    ----------------
    -- Attenuator --
@@ -241,4 +241,4 @@ package Effects is
    is
      (0 => Self.Source);
 
-end Effects;
+end ASL.Effects;

@@ -1,6 +1,6 @@
-with Config; use Config;
+with ASL.Config; use ASL.Config;
 
-package body Command is
+package body ASL.Command is
 
    ---------------------------
    -- Create_Simple_Command --
@@ -137,4 +137,4 @@ package body Command is
       return Map (A);
    end To_Seq_Notes;
 
-end Command;
+end ASL.Command;

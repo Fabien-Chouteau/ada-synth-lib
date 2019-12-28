@@ -1,6 +1,6 @@
-with Config; use Config;
+with ASL.Config; use ASL.Config;
 
-package body Effects is
+package body ASL.Effects is
 
    function Add_Generator
      (Self : in out Mixer; G : Mixer_Generator) return Natural;
@@ -489,4 +489,4 @@ package body Effects is
       Self.Level := Val;
    end Set_Value;
 
-end Effects;
+end ASL.Effects;

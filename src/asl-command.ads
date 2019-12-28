@@ -1,9 +1,9 @@
-with Sound_Gen_Interfaces; use Sound_Gen_Interfaces;
-with Utils; use Utils;
+with ASL.Sound_Gen_Interfaces; use ASL.Sound_Gen_Interfaces;
+with ASL.Utils; use ASL.Utils;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
-with Array_Utils;
+with ASL.Array_Utils;
 
-package Command is
+package ASL.Command is
    type Simple_Command is new Note_Generator and I_Simulation_Listener
      with record
       On_Period, Off_Period, Current_P : Sample_Period;
@@ -60,4 +60,4 @@ package Command is
    function Note_For_Sample
      (Self : Simple_Sequencer; Sample_Nb : Sample_Period) return Natural;
 
-end Command;
+end ASL.Command;

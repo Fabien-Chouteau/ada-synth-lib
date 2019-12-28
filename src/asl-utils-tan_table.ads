@@ -1,4 +1,4 @@
-package Utils.Tan_Table is
+package ASL.Utils.Tan_Table is
    TAN_TABLE_SIZE  : constant := 2000;
    TAN_TABLE : array (0 .. TAN_TABLE_SIZE - 1) of Float :=
      (
@@ -404,4 +404,4 @@ package Utils.Tan_Table is
        6.6345677376, 6.6667900085, 6.6993203163, 6.7321619987, 6.7653207779
       );
 
-end Utils.Tan_Table;
+end ASL.Utils.Tan_Table;

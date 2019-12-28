@@ -1,4 +1,4 @@
-with Waves; use Waves;
+with ASL.Waves; use ASL.Waves;
 with Write_To_Stdout;
 
 procedure Simple_Sine_2 is

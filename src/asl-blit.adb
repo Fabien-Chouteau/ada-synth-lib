@@ -1,7 +1,7 @@
 with Ada.Numerics.Elementary_Functions;
 use Ada.Numerics;
 
-package body BLIT is
+package body ASL.BLIT is
    Low_Pass : constant := 0.999;
    --  lower values filter more high frequency
 
@@ -269,4 +269,4 @@ package body BLIT is
 
 begin
    Init_Steps;
-end BLIT;
+end ASL.BLIT;

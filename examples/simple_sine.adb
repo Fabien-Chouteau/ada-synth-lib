@@ -1,9 +1,9 @@
-with Waves; use Waves;
+with ASL.Waves; use ASL.Waves;
 with Write_To_Stdout;
-with Command; use Command;
-with Effects; use Effects;
-with Sound_Gen_Interfaces; use Sound_Gen_Interfaces;
-with Utils; use Utils;
+with ASL.Command; use ASL.Command;
+with ASL.Effects; use ASL.Effects;
+with ASL.Sound_Gen_Interfaces; use ASL.Sound_Gen_Interfaces;
+with ASL.Utils; use ASL.Utils;
 
 procedure Simple_Sine is
    pragma Suppress (Accessibility_Check);

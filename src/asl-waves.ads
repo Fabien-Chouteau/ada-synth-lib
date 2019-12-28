@@ -1,8 +1,8 @@
-with Utils; use Utils;
-with Sound_Gen_Interfaces; use Sound_Gen_Interfaces;
+with ASL.Utils; use ASL.Utils;
+with ASL.Sound_Gen_Interfaces; use ASL.Sound_Gen_Interfaces;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 
-package Waves is
+package ASL.Waves is
 
    subtype Period_Buffer is Generator_Buffer;
 
@@ -128,6 +128,8 @@ package Waves is
       Param_Scale : Param_Scale_T := Linear)
       return access Fixed_Gen;
 
+   procedure Set_Frequency (Self : in out Fixed_Gen; Freq : Frequency);
+
    overriding procedure Next_Samples
      (Self : in out Fixed_Gen; Buffer : in out Generator_Buffer);
    overriding procedure Reset (Self : in out Fixed_Gen);
@@ -224,6 +226,9 @@ package Waves is
       Sustain : Scale;
       Source : access Note_Generator'Class := null) return access ADSR;
 
+   procedure Note_On (Self : in out ADSR);
+   procedure Note_Off (Self : in out ADSR);
+
    overriding procedure Next_Samples
      (Self : in out ADSR; Buffer : in out Generator_Buffer);
    overriding procedure Reset (Self : in out ADSR);
@@ -284,4 +289,4 @@ package Waves is
      (case I is
       when 0 | 1 | 3 => Exp, when others => Linear);
 
-end Waves;
+end ASL.Waves;

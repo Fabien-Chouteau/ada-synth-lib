@@ -1,9 +1,11 @@
-with Command; use Command;
-with Utils; use Utils;
-with Sound_Gen_Interfaces; use Sound_Gen_Interfaces;
-with Effects; use Effects;
-with Waves; use Waves;
-with BLIT; use BLIT;
+with ASL.Command; use ASL.Command;
+with ASL.Utils; use ASL.Utils;
+with ASL.Sound_Gen_Interfaces; use ASL.Sound_Gen_Interfaces;
+with ASL.Effects; use ASL.Effects;
+with ASL.Waves; use ASL.Waves;
+with ASL.BLIT; use ASL.BLIT;
+
+use ASL;
 
 package Simple_Demo is
 

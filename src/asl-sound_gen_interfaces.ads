@@ -1,7 +1,7 @@
-with Utils; use Utils;
-with Array_Utils;
+with ASL.Utils; use ASL.Utils;
+with ASL.Array_Utils;
 
-package Sound_Gen_Interfaces is
+package ASL.Sound_Gen_Interfaces is
 
    Sample_Nb : Sample_Period := 0;
    --  Global state for ASL: This is the state of the sound simulation, eg. at
@@ -154,4 +154,4 @@ package Sound_Gen_Interfaces is
 
    No_Seq_Note : Sequencer_Note := (Note => No_Note, Duration => 0);
 
-end Sound_Gen_Interfaces;
+end ASL.Sound_Gen_Interfaces;
